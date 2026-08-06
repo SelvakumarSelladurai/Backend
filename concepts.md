@@ -1,15 +1,15 @@
 
 #Node.js
-## **node.js** is an open-source, cross-platform Javascript runtime environment that allows us to run JS outside the browser.
+# **node.js** is an open-source, cross-platform Javascript runtime environment that allows us to run JS outside the browser.
 
-## V8 is the engine that reads JavaScript code, compiles it into machine code, and executes it efficiently.
+# V8 is the engine that reads JavaScript code, compiles it into machine code, and executes it efficiently.
 **(You) → (Speak)JS → (Translator)V8 Engine → Machine Code → (Person)CPU**
 ---
 
 #Why Node.js Created?
-## Before Node.js, JS Could only run inside web browsers. Developers had to use other languages like Java, PHP, Python, or C# to build backend applications. 
+# Before Node.js, JS Could only run inside web browsers. Developers had to use other languages like Java, PHP, Python, or C# to build backend applications. 
 
-## Node.js was created to enable JS to run on the server, allowing developers to build both the frontend and backend using a single programming language.
+# Node.js was created to enable JS to run on the server, allowing developers to build both the frontend and backend using a single programming language.
 ---
 
 #Key Features of Node.js
@@ -24,13 +24,13 @@
 -----------
 
 #npm
-## **npm (Node Package Manager)** is the default package manager for **Node.js**. It is used to install, manage, update, and share JS Packages (Libraries and tools) required for a project. [npm will be automatically when we install Node.js]
+# **npm (Node Package Manager)** is the default package manager for **Node.js**. It is used to install, manage, update, and share JS Packages (Libraries and tools) required for a project. [npm will be automatically when we install Node.js]
 
-## **Package** is a reusable piece of code created by developers to solve a specific problem.
+# **Package** is a reusable piece of code created by developers to solve a specific problem.
 
 #History of Node.js
-## Node.js was create by **Ryan Dahl** in **2009**.
-## Ryan Dahl wanted to build a server that could efficiently handle thousand of simultaneous connections without creating a separate thread for each request.
+# Node.js was create by **Ryan Dahl** in **2009**.
+# Ryan Dahl wanted to build a server that could efficiently handle thousand of simultaneous connections without creating a separate thread for each request.
 
 | Year | Event                                                                               |
 |------|-------------------------------------------------------------------------------------|
