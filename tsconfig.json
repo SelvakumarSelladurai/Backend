@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "ES2022", // JavaScript version
+        "module": "NodeNext", // Node.js module system
+        "moduleResolution": "NodeNext", // How modules are resolved
+        "rootDir": "./src", // Source code directory
+        "outDir": "./dist", // Compiled output directory
+        "strict": true, // Enable strict type checking
+        "esModuleInterop": true, // Better CommonJS/ES module compatibility
+        "allowSyntheticDefaultImports": true, // Allow default imports
+        "skipLibCheck": true, // Skip type checking of node_modules
+        "forceConsistentCasingInFileNames": true, // Enforce consistent file names
+        "sourceMap": true, // Generate source maps for debugging
+        "declaration": true, // Generate .d.ts declaration files
+        "noUnusedLocals": true, // Error on unused local variables
+        "noUnusedParameters": true, // Error on unused function parameters
+        "resolveJsonModule": true, // Allow importing JSON files
+        "types": [
+            "node"
+        ] // Include Node.js types
+    },
+    "include": [
+        "src/**/*.ts"
+    ], // Include TypeScript files
+    "exclude": [
+        "node_modules",
+        "dist"
+    ] // Ignore these directories
+}

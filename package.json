@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "01": "tsx src/01-process-object.ts",
+    "02": "tsx src/02-crypto-module.ts",
+    "03": "tsx src/03-os-module.ts",
+    "04": "tsx src/04-path-module.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SelvakumarSelladurai/Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SelvakumarSelladurai/Backend/issues"
+  },
+  "homepage": "https://github.com/SelvakumarSelladurai/Backend#readme",
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4.23.9",
+    "typescript": "^7.0.2"
+  }
+}
