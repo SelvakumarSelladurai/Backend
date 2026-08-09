@@ -46,3 +46,34 @@
 - **Browser** → Executes JavaScript to create interactive user interfaces.
 - **node.js** → Executes JavaScript to build server-side applications and backend services.
 
+node -v -- v24.14.0
+npm -v -- 11.9.0
+
+npm init -y
+Wrote to D:\Backend\package.json:
+
+{
+  "name": "backend",  //project identifier
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SelvakumarSelladurai/Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SelvakumarSelladurai/Backend/issues"
+  },
+  "homepage": "https://github.com/SelvakumarSelladurai/Backend#readme"
+}
+
+# dependencies - Packages required for the application to run in both development and production
+# devdependencies - Packages used only during development for testing, debugging, linting, or building the application
+
