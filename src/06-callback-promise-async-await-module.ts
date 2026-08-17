@@ -62,6 +62,19 @@ function findUserWithPromise(userId: number): Promise<User> {
     })
 }
 
+async function findUserWithAsyncAwait(userId: number): Promise<void> {
+    try {
+        const user = await findUserWithPromise(userId)
+        console.log('async/wait', user.name);
+    } catch (error) {
+        const message = error instanceof Error ? error.message : 'unknown error';
+
+        console.log("async/await", message);
+    }
+
+}
+findUserWithAsyncAwait(1);
+
 // findUserWithCallback(3, (error, user) => {
 //     if (error) {
 //         console.log("callback error", error.message);
@@ -71,9 +84,8 @@ function findUserWithPromise(userId: number): Promise<User> {
 //     console.log("callback result", user?.id, user?.name, user?.role)
 // })
 
-findUserWithPromise(1).then((user) => {
-    console.log("callback result", user?.id, user?.name, user?.role)
-}).catch((error: Error) => {
-    console.log("Promise Error")
-})
-
+// findUserWithPromise(1).then((user) => {
+//     console.log("callback result", user?.id, user?.name, user?.role)
+// }).catch((error: Error) => {
+//     console.log("Promise Error")
+// })
