@@ -1,65 +1,60 @@
+import { Readable, Transform, Writable } from "node:stream";
+import { pipeline } from "node:stream/promises";
 
-
-// piece by piece
-// not loading the data everything at once
-// read llarge files
-// upload files
-// downloading files
-// video/audio processing
-// compression
-
-import { pipeline, Readable } from "node:stream";
-
-// Chunks (small pieces)
-
-// here is my full 500mb file
-// here is chunk 1
-// here is chunk 2
-//.. here is chunk n
-
-// memory efficient
-
-// streams types
-// reable stream - source of data
-
-// writable stream - destination where the data is written
-// transform stream -  read the data, change it and pass that forward
-
+// Readable stream
+// Source of the data
 const readableStream = Readable.from([
     "hello",
     "from",
     "node.js",
-    "streams"
-])
+    "streams",
+]);
 
-// callback(error, result)
-const uppercasetransform = new Transform({
-    transform(chunk, encoding, calback) {
-        const text = chunk.toString();
+// Transform stream
+// Reads chunks -> modifies them -> passes them forward
+const uppercaseTransform = new Transform({
+    transform(chunk, encoding, callback) {
+        try {
+            const text = chunk.toString();
 
-        callback(null, text.toUpperCase())
-    }
-})
+            // Convert the chunk to uppercase
+            const upperCaseText = text.toUpperCase();
 
+            // Send transformed data to the next stream
+            callback(null, upperCaseText);
+        } catch (error) {
+            callback(error as Error);
+        }
+    },
+});
 
+// Writable stream
+// Destination where the transformed data is written
 const writableStream = new Writable({
-    write(chunk, encoding, calback) {
-        console.log("received chunk", chunk.toString());
+    write(chunk, encoding, callback) {
+        console.log("Received chunk:", chunk.toString());
 
-        calback()
-    }
-})
+        callback();
+    },
+});
 
 async function main(): Promise<void> {
     try {
-        await pipeline(readableStream, uppercasetransform, writableStream)
+        await pipeline(
+            readableStream,
+            uppercaseTransform,
+            writableStream
+        );
 
-        console.log("string completed")
+        console.log("Stream completed");
     } catch (error) {
-        const msg = error instanceof Error ? error.message : "Unknown error";
-        console.error("stream failed", msg)
+        const msg =
+            error instanceof Error
+                ? error.message
+                : "Unknown error";
+
+        console.error("Stream failed:", msg);
     }
 }
 
-
-main()
+main();
